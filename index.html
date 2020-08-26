@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parallax Effect By Jeel Patel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="parallax.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s linear;
+        }
+        body{
+            background-color: #000;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url(background.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: brightness(105%);
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: #000;
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            padding: 7px 0;
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: .7px;
+        }
+        a{
+            color: #9042a0;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul id="scene">
+          <li class="layer" data-depth="-0.5">
+              <img width="100%" height="auto" src="text.png">
+          </li>
+          <li class="layer" data-depth="0.5">
+              <img width="100%" height="auto" src="planet1.png">
+            </li>
+          <li class="layer" data-depth="-1.5">
+            <img width="100%" height="auto" src="planet2.png">
+          </li>
+          <li class="layer" data-depth="1.5">
+              <img width="100%" height="auto" src="astronaut.png">
+          </li>
+          <li class="layer" data-depth="1.5">
+              <img width="100%" height="auto" src="rocket.png">
+          </li>
+        </ul>
+      </div>
+      <footer>
+          Made at 5AM BY <a href="https://jeelpatel.ml">JEEL PATEL</a>
+      </footer>
+      <script type="text/javascript">
+          var scene = document.getElementById('scene');
+          var parallax = new Parallax(scene);
+      </script>
+</body>
+</html>
